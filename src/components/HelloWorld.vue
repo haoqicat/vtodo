@@ -1,6 +1,12 @@
 <template>
   <div class="hello" v-bind:title="msg" >
     {{ msg }}
+    <div v-if="seen">
+      你能看到我吗？
+    </div>
+    <div v-bind:key="todo.id" v-for="todo in todos">
+      {{ todo.text }}
+    </div>
   </div>
 </template>
 
@@ -8,7 +14,18 @@
 export default {
   name: 'HelloWorld',
   data: () => ({
-    msg: 'Helle Everyone'
+    seen: false,
+    msg: 'Helle Everyone',
+    todos: [
+      {
+        id: '1',
+        text: '第一项'
+      },
+      {
+        id: '2',
+        text: '第二项'
+      }
+    ]
   })
 }
 </script>
