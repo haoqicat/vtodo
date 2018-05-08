@@ -10,9 +10,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '@/styles/variables.scss';
 .wrap {
   font-size: 25px;
+  color: $accent-blue;
   text-align: center;
 }
 </style>
