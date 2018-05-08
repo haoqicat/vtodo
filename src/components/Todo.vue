@@ -1,9 +1,15 @@
 <template>
-  <div class="wrap">
-    <Header />
-    <TodoList :todos="todos" />
-    <Form />
-    <Actions />
+  <div class="todo-wrap">
+    <div class="header-wrap">
+      <Header />
+    </div>
+    <div class="main">
+      <TodoList :todos="todos" />
+    </div>
+    <div class="bottom">
+      <Form />
+      <Actions />
+    </div>
   </div>
 </template>
 
@@ -42,3 +48,17 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.todo-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  .main {
+    flex-grow: 1;
+  }
+  .bottom {
+    border: 2px solid lightblue;
+  }
+}
+</style>
