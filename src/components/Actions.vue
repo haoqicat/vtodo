@@ -64,6 +64,9 @@ export default {
   justify-content: space-around;
   svg {
     width: 20px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 </style>
