@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <Todo />
+    <div class="card">
+      <Todo />
+    </div>
   </div>
 </template>
 
@@ -15,13 +17,30 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/styles/variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100vh;
+  background-color: $primary-pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card {
+  background-color: #fff;
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 </style>
