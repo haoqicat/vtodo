@@ -37,11 +37,11 @@ export default {
   margin-right: 30px;
   display: flex;
   input {
-    line-height: 30px;
+    line-height: 25px;
     font-size: 17px;
     flex-grow: 1;
     padding-left: 5px;
-    border: 2px solid $accent-blue;
+    border: 1px solid $accent-blue;
     &:focus {
       outline: none;
     }
@@ -54,7 +54,7 @@ export default {
     background-color: $accent-dark;
     color: white;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
-    transform: scale(2.5);
+    transform: scale(2);
     &:focus {
       outline: none;
     }
