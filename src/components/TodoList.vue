@@ -1,44 +1,34 @@
 <template>
   <div class="wrap">
-    <div class="primary">
-      Primary
-    </div>
-    <div class="accent">
-      Accent
-    </div>
-    <div class="light">
-      Light
-    </div>
-    <div class="dark">
-      Dark
-    </div>
+    <ul>
+      <li :key="todo.id" v-for="todo in todos" :class="{done: todo.compl}" >
+        {{ todo.body }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'TodoList'
+  name: 'TodoList',
+  props: ['todos']
 }
 </script>
 
 <style lang="scss">
 @import '@/styles/variables.scss';
 .wrap {
-  * {
-    min-height: 50px;
+  ul {
+    padding: 0;
   }
-  .primary {
-    background-color: $primary-pink;
+  li {
+    list-style: none;
+    line-height: 1.9;
+    margin-bottom: 5px;
   }
-  .accent {
-    background-color: $accent-blue;
-  }
-  .light {
-    background-color: $accent-light;
-  }
-  .dark {
-    color: white;
-    background-color: $accent-dark;
+  li.done {
+    color: lighten(#000, 50%);
+    text-decoration: line-through;
   }
 }
 </style>

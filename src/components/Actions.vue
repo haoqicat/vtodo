@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .wrap {
   border: 2px solid lightblue;
 }
