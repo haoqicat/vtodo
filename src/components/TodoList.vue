@@ -1,11 +1,16 @@
 <template>
   <div class="wrap">
-    List
     <div class="primary">
       Primary
     </div>
     <div class="accent">
       Accent
+    </div>
+    <div class="light">
+      Light
+    </div>
+    <div class="dark">
+      Dark
     </div>
   </div>
 </template>
@@ -19,9 +24,21 @@ export default {
 <style lang="scss">
 @import '@/styles/variables.scss';
 .wrap {
-  border: 2px solid lightblue;
+  * {
+    min-height: 50px;
+  }
   .primary {
-    color: $primary-color;
+    background-color: $primary-pink;
+  }
+  .accent {
+    background-color: $accent-blue;
+  }
+  .light {
+    background-color: $accent-light;
+  }
+  .dark {
+    color: white;
+    background-color: $accent-dark;
   }
 }
 </style>
