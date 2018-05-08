@@ -10,8 +10,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .wrap {
-  border: 2px solid lightblue;
+  font-size: 25px;
+  text-align: center;
 }
 </style>
