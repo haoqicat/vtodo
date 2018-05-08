@@ -57,8 +57,5 @@ export default {
   .main {
     flex-grow: 1;
   }
-  .bottom {
-    border: 2px solid lightblue;
-  }
 }
 </style>
