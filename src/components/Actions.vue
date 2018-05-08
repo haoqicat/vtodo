@@ -52,7 +52,7 @@ export default {
   name: 'Actions',
   data: () => ({
     isActive: '#41A4C3',
-    notActive: '#58D5D3'
+    notActive: 'rgb(88, 213, 211, .5)'
   })
 }
 </script>
