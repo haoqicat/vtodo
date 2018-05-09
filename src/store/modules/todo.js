@@ -8,7 +8,7 @@ const state = {
     {
       id: '2',
       body: '吃饭',
-      compl: true
+      compl: false
     },
     {
       id: '3',
@@ -21,6 +21,12 @@ const state = {
 const mutations = {
   addTodo(state, todo) {
     state.all.push(todo)
+  },
+  close(state, id) {
+    state.all = state.all.map(todo => {
+      if (id === todo.id) todo.compl = true
+      return todo
+    })
   }
 }
 

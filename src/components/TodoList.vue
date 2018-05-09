@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <ul>
-      <li :key="todo.id" v-for="todo in todos" :class="{done: todo.compl}" >
+      <li @click="close(todo.id)" :key="todo.id" v-for="todo in todos" :class="{done: todo.compl}" >
         {{ todo.body }}
       </li>
     </ul>
@@ -11,6 +11,11 @@
 <script>
 export default {
   name: 'TodoList',
+  methods: {
+    close(id) {
+      this.$store.commit('close', id)
+    }
+  },
   computed: {
     todos() {
       return this.$store.state.todo.all
