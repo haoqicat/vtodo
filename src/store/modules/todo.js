@@ -3,7 +3,7 @@ const state = {
     {
       id: '1',
       body: '遛狗',
-      compl: false
+      compl: true
     },
     {
       id: '2',
