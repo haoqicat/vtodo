@@ -1,11 +1,9 @@
 <template>
   <div class="wrap">
-    {{ currentFilter }}
-
     <svg v-on:click="setFilter('ALL')" width="45px" height="40px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs></defs>
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="Desktop" transform="translate(-415.000000, -731.000000)" :fill="notActive">
+            <g id="Desktop" transform="translate(-415.000000, -731.000000)" :fill="allIconColor">
                 <g id="action-list" transform="translate(415.000000, 723.000000)">
                     <g id="list-with-bullets" transform="translate(0.000000, 8.000000)">
                         <g id="Capa_1">
@@ -32,7 +30,7 @@
         <desc>Created with Sketch.</desc>
         <defs></defs>
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="Desktop" transform="translate(-566.000000, -723.000000)" :fill="isActive">
+            <g id="Desktop" transform="translate(-566.000000, -723.000000)" :fill="complIconColor">
                 <g id="action-list" transform="translate(415.000000, 723.000000)">
                     <g id="check-mark" transform="translate(151.000000, 0.000000)">
                         <g id="Capa_1">
@@ -48,15 +46,17 @@
 </template>
 
 <script>
+import { ACTIVE_COLOR, NOT_ACTIVE } from '../constants/Colors'
 export default {
   name: 'Actions',
   data: () => ({
-    isActive: '#41A4C3',
-    notActive: 'rgb(88, 213, 211, .5)'
+    allIconColor: ACTIVE_COLOR,
+    complIconColor: NOT_ACTIVE
   }),
   methods: {
     setFilter(filter) {
-      this.$store.commit('setFilter', filter)
+      this.allIconColor = filter === 'ALL' ? ACTIVE_COLOR : NOT_ACTIVE
+      this.complIconColor = filter === 'ALL' ? NOT_ACTIVE : ACTIVE_COLOR
     }
   },
   computed: {
