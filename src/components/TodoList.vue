@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <ul>
-      <li @click="close(todo.id)" :key="todo.id" v-for="todo in todos" :class="{done: todo.compl}" >
+      <li @click="close(todo.id)" :key="todo.id" v-for="todo in filteredTodos" :class="{done: todo.compl}" >
         {{ todo.body }}
       </li>
     </ul>
@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { filterTodos } from '../utils'
+
 export default {
   name: 'TodoList',
   methods: {
@@ -19,6 +21,12 @@ export default {
   computed: {
     todos() {
       return this.$store.state.todo.all
+    },
+    currentFilter() {
+      return this.$store.state.todo.currentFilter
+    },
+    filteredTodos() {
+      return filterTodos(this.currentFilter, this.todos)
     }
   }
 }
