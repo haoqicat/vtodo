@@ -1,8 +1,7 @@
 <template>
   <div class="wrap">
-    {{ filteredTodos }}
     <ul>
-      <li @click="close(todo.id)" :key="todo.id" v-for="todo in todos" :class="{done: todo.compl}" >
+      <li @click="close(todo.id)" :key="todo.id" v-for="todo in filteredTodos" :class="{done: todo.compl}" >
         {{ todo.body }}
       </li>
     </ul>

@@ -57,6 +57,7 @@ export default {
     setFilter(filter) {
       this.allIconColor = filter === 'ALL' ? ACTIVE_COLOR : NOT_ACTIVE
       this.complIconColor = filter === 'ALL' ? NOT_ACTIVE : ACTIVE_COLOR
+      this.$store.commit('setFilter', filter)
     }
   },
   computed: {
