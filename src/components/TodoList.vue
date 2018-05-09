@@ -25,7 +25,7 @@ export default {
       return this.$store.state.todo.currentFilter
     },
     filteredTodos() {
-      return filterTodos(this.todos, this.currentFilter)
+      return filterTodos(this.currentFilter, this.todos)
     }
   }
 }
