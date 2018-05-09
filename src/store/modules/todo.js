@@ -15,7 +15,8 @@ const state = {
       body: '再次吃饭',
       compl: false
     }
-  ]
+  ],
+  currentFilter: 'ALL'
 }
 
 const mutations = {
@@ -27,6 +28,9 @@ const mutations = {
       if (id === todo.id) todo.compl = true
       return todo
     })
+  },
+  setFilter(state, filter) {
+    state.currentFilter = filter
   }
 }
 
