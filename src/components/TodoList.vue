@@ -11,7 +11,11 @@
 <script>
 export default {
   name: 'TodoList',
-  props: ['todos']
+  computed: {
+    todos() {
+      return this.$store.state.todo.all
+    }
+  }
 }
 </script>
 

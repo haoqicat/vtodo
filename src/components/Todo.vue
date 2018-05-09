@@ -4,7 +4,7 @@
       <Header />
     </div>
     <div class="main">
-      <TodoList :todos="todos" />
+      <TodoList />
     </div>
     <div class="bottom">
       <Form />
@@ -21,25 +21,6 @@ import TodoList from './TodoList'
 import Actions from './Actions'
 export default {
   name: 'Todo',
-  data: () => ({
-    todos: [
-      {
-        id: '1',
-        body: '遛狗',
-        compl: false
-      },
-      {
-        id: '2',
-        body: '吃饭',
-        compl: true
-      },
-      {
-        id: '3',
-        body: '再次吃饭',
-        compl: false
-      }
-    ]
-  }),
   components: {
     Header,
     TodoList,
