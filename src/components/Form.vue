@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
-    <input />
-    <button>
+    <input v-model="userInput" />
+    <button v-on:click="addTodo">
       <svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
         <title>Capa_1</title>
@@ -25,7 +25,22 @@
 
 <script>
 export default {
-  name: 'Form'
+  name: 'Form',
+  data: () => ({
+    userInput: ''
+  }),
+  methods: {
+    addTodo() {
+      const todoCount = this.$store.state.todo.all.length
+      const todo = {
+        id: (todoCount + 1).toString(),
+        body: this.userInput,
+        compl: false
+      }
+      this.$store.commit('addTodo', todo)
+      this.userInput = ''
+    }
+  }
 }
 </script>
 

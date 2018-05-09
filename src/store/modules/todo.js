@@ -18,6 +18,13 @@ const state = {
   ]
 }
 
+const mutations = {
+  addTodo(state, todo) {
+    state.all.push(todo)
+  }
+}
+
 export default {
+  mutations,
   state
 }
